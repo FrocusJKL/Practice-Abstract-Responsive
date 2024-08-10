@@ -252,9 +252,9 @@ header {
 
 /* Footer */
 
+/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
 footer {
 	width: 100%;
-	height: 100%;
 	background-color: black;
 	margin-top: 100px;
 	color: #fff;
@@ -266,13 +266,16 @@ footer {
 
 .footer-container {
 	display: flex;
-	flex-direction: row;
+	flex-wrap: wrap;
+	width: 100%;
 }
-
+/*  */
 .footer-columns {
 	display: flex;
 	flex-direction: column;
-	width: 315px;
+	flex: 1; /* Deja que las columnas crezcan según el espacio disponible */
+	min-width: 200px; /* Puedes ajustar este mínimo según tus necesidades */
+	margin: 10px; /* Espacio entre columnas */
 }
 .footer-columns > h3 {
 	font-size: 24px;
@@ -318,17 +321,28 @@ a {
 .footer-column-copyright > p {
 	margin: 0;
 }
+/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+/* Responsive*/
 
-/* Responsive design Tablet*/
-
-.navbar-mobile-buttons {
-	width: 200px;
-	height: 30px;
-	background-color: rgb(250, 0, 0);
+.navbar-mobile-menu {
 	margin-right: 100px;
-	box-sizing: border-box;
+	width: 50px;
+	height: 50px;
 	display: none;
 }
+
+.mobile-menu_button,
+.mobile-search_button {
+	display: flex;
+	align-items: center;
+	margin-right: 10px;
+}
+
+.mobile-nav_menu {
+	display: none;
+}
+
+/* Tablet */
 
 @media screen and (max-width: 1200px) {
 	/* header */
@@ -337,16 +351,19 @@ a {
 		width: 100%;
 	}
 
-	.logo-wrapper{
-		margin-left: 90px;
+	.logo-wrapper {
+		margin-left: px;
 	}
 	.navbar-buttons {
 		display: none;
 	}
 
-	.navbar-mobile-buttons {
-		display: block;
-		margin-right: 90px;
+	.navbar-mobile-menu {
+		display: flex;
+	}
+
+	.mobile-nav_menu {
+		display: flex;
 	}
 
 	/* Main */
@@ -382,10 +399,12 @@ a {
 		margin: 0 100px 0 50px;
 	}
 
+	/* Footer  */
+
 	.footer-container {
 		width: 100%;
 		display: grid;
-		grid-template-columns: 150px;
+		grid-column: span 2;
 	}
 	.footer-column-copyright {
 		grid-column: 3/3;
@@ -393,7 +412,7 @@ a {
 	}
 }
 
-/*Responsive design Movil*/
+/*Responsive design Mobile*/
 
 @media screen and (max-width: 720px) {
 	.main-section {
