@@ -194,7 +194,6 @@ header {
 	transition: 0.3s;
 }
 
-
 /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 /* Content */
@@ -202,8 +201,8 @@ header {
 .main-content {
 	margin-top: 125px;
 	display: grid;
-	grid-template-columns: 1fr  1fr;
-	padding-right: 0 500px 0 1px
+	grid-template-columns: 1fr 1fr;
+	padding-right: 0 500px 0 1px;
 }
 
 .category-list_items {
@@ -259,12 +258,9 @@ header {
 	transform: scaleX(1);
 }
 
-
-
 /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 /* Footer */
-
 
 footer {
 	width: 100%;
@@ -351,8 +347,38 @@ a {
 	margin-right: 10px;
 }
 
-.mobile-nav_menu {
+.mobile-nav_dropdown_menu {
 	display: none;
+	flex-direction: column;
+	background-color: black;
+	text-align: center;
+	overflow: hidden;
+	transition: max-height 0.5s ease-out;
+}
+.dropdown-menu {
+	display: none;
+	flex-direction: column;
+	background-color: black;
+	text-align: center;
+	overflow: hidden;
+	transition: max-height 0.5s ease-out;
+}
+
+.dropdown-menu a {
+	display: block;
+	color: white;
+	padding: 10px 0;
+	text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+	text-decoration: underline;
+}
+
+/* Estado activo del menú */
+.dropdown-menu.active {
+	display: flex;
+	max-height: 200px; /* Ajusta según la cantidad de contenido */
 }
 
 /* Tablet */
@@ -365,7 +391,7 @@ a {
 	}
 
 	.logo-wrapper {
-		margin-left: px;
+		margin-left: 50px;
 	}
 	.navbar-buttons {
 		display: none;
@@ -375,10 +401,22 @@ a {
 		display: flex;
 	}
 
-	.mobile-nav_menu {
-		display: flex;
+	.mobile-search_button > svg {
+		cursor: pointer;
+		box-sizing: border-box;
+		transition: 0.2s;
+
 	}
 
+	.mobile-search_button:hover > svg {
+		scale: 1.1;
+		transition: 0.2s;
+	}
+	.mobile-menu_button > svg{
+		cursor: pointer;
+	}
+
+	
 	/* Main */
 
 	/* Main - search bar */
@@ -435,5 +473,8 @@ a {
 		font-size: 40px;
 		width: 100%;
 		justify-self: center;
+	}
+	* {
+		background-color: blue;
 	}
 }
