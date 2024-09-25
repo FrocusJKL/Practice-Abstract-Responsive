@@ -1,10 +1,7 @@
-document.getElementById("hamburger").addEventListener("click", function() {
+const hamburger = document.querySelector('.mobile-hamburger-menu');
+const navMenu = document.querySelector('.navbar-buttons');
 
-    var dropdownMenu = document.getElementById("dropdown-menu");
-
-    if (dropdownMenu.classList.contains("active")) {
-        dropdownMenu.classList.remove("active");
-    } else {
-        dropdownMenu.classList.add("active");
-    }
+hamburger.addEventListener('click', () => {
+	hamburger.classList.toggle('active');
+	navMenu.classList.toggle('active');
 });

@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
-
 /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
 body,
 html {
@@ -16,8 +15,7 @@ body {
 	font-family: 'Noto Sans', sans-serif;
 }
 
-/* Header *//* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-
+/* Header */ /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 header {
 	height: 88px;
@@ -36,7 +34,7 @@ header {
 	-webkit-transition: margin-top 0.7s ease;
 	transition: margin-top 0.7s ease;
 }
-/* Logo *//* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* Navbar Logo */ /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 .logo-wrapper {
 	display: flex;
@@ -45,14 +43,20 @@ header {
 }
 .nav-logo,
 .nav-help{
+	display: flex;
 	color: white;
 	text-decoration: none;
 	font-weight: lighter;
 	font-size: 25px;
 	position: relative;
 }
+.logo-name{ 
+	margin-left: 10px;
+}
 
-.logo-bar_div{
+
+
+.logo-bar_div {
 	width: 2px;
 	height: 100%;
 	display: block;
@@ -90,14 +94,17 @@ header {
 	transform: scaleX(1);
 }
 
-
-/* Main *//* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-
-/* Menu *//* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-
+/* Navbar Menu */ /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 .navbar-buttons {
-	padding-right: 140px;
+	margin-right: 120px;
+}
+.nav-separation {
+	display: none;
+}
+
+.separation {
+	display: none;
 }
 
 .btn-request,
@@ -134,6 +141,8 @@ header {
 	color: #4c5fd5;
 	transition: 0.3s;
 }
+
+/* Main */ /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 .main-section {
 	width: 100%;
@@ -194,9 +203,7 @@ header {
 	transition: 0.3s;
 }
 
-
-/* Content *//* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-
+/* Content */ /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 .main-content {
 	margin-top: 125px;
@@ -258,9 +265,7 @@ header {
 	transform: scaleX(1);
 }
 
-
-/* Footer *//* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-
+/* Footer */ /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 footer {
 	width: 100%;
@@ -330,111 +335,73 @@ a {
 .footer-column-copyright > p {
 	margin: 0;
 }
-/* Responsive*//* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
+/* Responsive design */ /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
-.navbar-mobile-menu {
-	margin-right: 100px;
-	width: 50px;
-	height: 50px;
-	display: none;
-}
-
-.mobile-menu_button,
+.navbar-mobile-menu,
+.mobile-hamburger-menu,
 .mobile-search_button {
-	display: flex;
-	align-items: center;
-	margin-right: 10px;
+	display: none;
 }
 
-.mobile-nav_dropdown_menu {
-	display: none;
-	flex-direction: column;
-	background-color: black;
-	text-align: center;
-	overflow: hidden;
-	transition: max-height 0.5s ease-out;
-}
-.dropdown-menu {
-	display: none;
-	flex-direction: column;
-	background-color: black;
-	text-align: center;
-	overflow: hidden;
-	transition: max-height 0.5s ease-out;
-}
-
-.dropdown-menu a {
+.bar {
 	display: block;
-	color: white;
-	padding: 10px 0;
-	text-decoration: none;
+	width: 25px;
+	height: 3px;
+	margin: 5px auto;
+	-webkit-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+	background-color: white;
 }
 
-.dropdown-menu a:hover {
-	text-decoration: underline;
-}
-
-/* Estado activo del menú */
-.dropdown-menu.active {
-	display: flex;
-	max-height: 200px; /* Ajusta según la cantidad de contenido */
-}
-
-/* Tablet */
+/* ------- Tablet ------- */
 
 @media screen and (max-width: 1200px) {
 	/* header */
 
-	header {
-		width: 100%;
-	}
+	/* Header - logo Wrapper */
 
 	.logo-wrapper {
-		margin-left: 50px;
+		margin-left: 20px;
 	}
+
+	/* header - mobile Menu  */
 	.navbar-buttons {
 		display: none;
 	}
 
 	.navbar-mobile-menu {
 		display: flex;
-	}
-
-	.mobile-search_button > svg {
-		cursor: pointer;
-		box-sizing: border-box;
-		transition: 0.2s;
-
-	}
-
-	.mobile-search_button:hover > svg {
-		scale: 1.1;
-		transition: 0.2s;
-	}
-	.mobile-menu_button > svg{
-		cursor: pointer;
-	}
-
-	
-	/* Main */
-
-	/* Main - search bar */
-
-	.main-section {
 		justify-content: center;
 		align-items: center;
 	}
-	.search-container_title {
-		font-size: 70px;
-		width: 100%;
+
+	.mobile-hamburger-menu {
+		display: block;
+		cursor: pointer;
+		margin-right: 20px;
 	}
 
-	.search-box {
-		width: 100%;
+	.mobile-search_button {
+		display: block;
+		cursor: pointer;
+		margin: 20px;
 	}
 
-	/* Main - content */
+
+	/* Aquí esta sección la animación de el menú hamburguesa */
+	.mobile-hamburger-menu.active .bar:nth-child(2) {
+		opacity: 0;
+	}
+	.mobile-hamburger-menu.active .bar:nth-child(1) {
+		transform: translateY(8px) rotate(45deg);
+	}
+
+	.mobile-hamburger-menu.active .bar:nth-child(3) {
+		transform: translateY(-8px) rotate(-45deg);
+	}
+
+	/* Main - content ------------------------------------------------------*/
 
 	.main-content {
 		display: block;
@@ -463,45 +430,23 @@ a {
 	}
 }
 
-/*Responsive design Mobile*/
+/* ------- Mobile ------- */
 
 @media screen and (max-width: 720px) {
 	/* header */
 
-	header {
-		width: 100%;
+	/* Header - logo Wrapper */
+	.nav-logo {
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
-
-	.logo-wrapper {
-		margin-left: 20px;
-	}
-	.nav-logo{
-		font-size: 20px
-	}
-
-	.nav-help{
+	.nav-logo,.nav-help {
 		font-size: 20px;
 	}
-	.navbar-mobile-menu {
-		display: flex;
-		margin-right: 40px;
+	.logo-name{
+		margin-left: 10px;
 	}
-
-	.mobile-search_button > svg {
-		cursor: pointer;
-		box-sizing: border-box;
-		transition: 0.2s;
-		width: 35px;
-	}
-
-	.mobile-search_button:hover > svg {
-		scale: 1.1;
-		transition: 0.2s;
-	}
-	.mobile-menu_button > svg{
-		cursor: pointer;
-	}
-
 	/* Main */
 
 	/* Main - search bar */
@@ -511,9 +456,9 @@ a {
 		align-items: center;
 		height: 35vh;
 	}
-	.search-container{
+	.search-container {
 		width: 100%;
-		margin:0 10px;
+		margin: 0 10px;
 	}
 	.search-container_title {
 		font-size: 35px;
@@ -535,29 +480,29 @@ a {
 		padding: 0 10px;
 	}
 	.category-list_items {
-		margin: 0 ;
+		margin: 0;
 		height: 250px;
 	}
 	.category-list_img {
 		width: 80px;
 		height: 80px;
-		margin:0 20px 0 10px;
+		margin: 0 20px 0 10px;
 	}
 
-	.category-list_content{
+	.category-list_content {
 		padding: 0;
 	}
-	.category-list_title{
+	.category-list_title {
 		font-size: 20px;
 		margin: 35px 0 20px 0;
 	}
-	.category-list_description{
+	.category-list_description {
 		font-size: 20px;
 	}
 
 	/* Footer  */
 
-	footer{
+	footer {
 		padding: 10px;
 	}
 
@@ -566,8 +511,8 @@ a {
 		display: grid;
 		grid-column: span 1;
 	}
-	.footer-columns{
-		margin:0;
+	.footer-columns {
+		margin: 0;
 	}
 	.footer-column-copyright {
 		margin-top: 40px;
