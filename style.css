@@ -376,7 +376,7 @@ a {
 		transition: 0.1s;
 		padding: 15px 0;
 	}
-
+/*		 Linea de Separación */
 	.separation {
 		display: block;
 		width: 50vw;
@@ -384,7 +384,7 @@ a {
 		background-color: #ffffff80;
 		margin: 5px 0;
 	}
-
+/*		 Botones del menu responsive */
 	.btn-request,
 	.btn-sign-in {
 		font-size: 20px;
