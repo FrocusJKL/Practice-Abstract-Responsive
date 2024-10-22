@@ -96,6 +96,7 @@ header {
 
 .navbar-buttons {
 	margin-right: 120px;
+	display: flex;
 }
 
 .separation {
