@@ -186,8 +186,8 @@ header {
 .search-input:focus {
 	outline: none;
 	transition: 0.3s;
-	font-size: 20.5px;
-	letter-spacing: 1px;
+	font-size: 20.01px;
+	letter-spacing: .5px;
 	color: #000;
 }
 
